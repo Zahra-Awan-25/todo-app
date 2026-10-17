@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zahra's To-Do</title>
+<style>
+body{background:#fff0f6; font-family:sans-serif; text-align:center; padding:20px}
+.box{background:white; max-width:380px; margin:auto; padding:20px; border-radius:15px}
+input{width:65%; padding:10px; border-radius:8px; border:1px solid #ccc}
+button{padding:10px 15px; background:#ff4d8d; color:white; border:none; border-radius:8px}
+li{list-style:none; background:#ffe6ee; margin:8px 0; padding:10px; border-radius:8px; text-align:left}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>Zahra's To-Do ✨</h2>
+<input id="t" placeholder="Task likho...">
+<button onclick="add()">Add</button>
+<ul id="list"></ul>
+</div>
+<script>
+function add(){
+let v=document.getElementById('t').value;
+if(v=="")return;
+let li=document.createElement('li');
+li.innerHTML=v+" <span onclick='this.parentElement.remove()' style='float:right'>❌</span>";
+document.getElementById('list').appendChild(li);
+document.getElementById('t').value="";
+}
+</script>
+</body>
+</html>
